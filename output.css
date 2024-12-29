@@ -715,12 +715,26 @@ video {
   clear: none;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mx-14 {
+  margin-left: 3.5rem;
+  margin-right: 3.5rem;
+}
+
 .mr-2 {
   margin-right: 0.5rem;
 }
 
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 
 .box-border {
@@ -826,6 +840,10 @@ video {
   height: 2.5rem;
 }
 
+.h-\[2\.5rem\] {
+  height: 2.5rem;
+}
+
 .w-\[25rem\] {
   width: 25rem;
 }
@@ -840,6 +858,26 @@ video {
 
 .w-\[weird-and-invalid\] {
   width: weird-and-invalid;
+}
+
+.w-2 {
+  width: 0.5rem;
+}
+
+.w-\[18rem\] {
+  width: 18rem;
+}
+
+.w-\[10rem\] {
+  width: 10rem;
+}
+
+.w-\[14rem\] {
+  width: 14rem;
+}
+
+.w-\[15rem\] {
+  width: 15rem;
 }
 
 .flex-shrink {
@@ -1182,6 +1220,14 @@ video {
 
 .grid-rows-6 {
   grid-template-rows: repeat(6, minmax(0, 1fr));
+}
+
+.grid-rows-7 {
+  grid-template-rows: repeat(7, minmax(0, 1fr));
+}
+
+.grid-rows-9 {
+  grid-template-rows: repeat(9, minmax(0, 1fr));
 }
 
 .flex-row {
