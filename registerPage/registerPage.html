@@ -5,17 +5,18 @@
         <title>Register Page</title>
     </head>
     <body style="background-image:url('../images/1000_F_211075851_gSKybVNvDWgZnrIaleNsQfIz2mqPKaor.jpg'); background-size: cover; background-attachment: fixed; background-position: center; background-repeat: no-repeat; font-family: vazir-font;" class="flex justify-center items-center">
-        <form action="" id="register-form" class=" grid grid-rows-6 gap-6 pt-14 pb-8 px-14 w-[25rem] shadow-[2px_2px_20px_-2px_black_inset]" style="backdrop-filter:blur(4px); background-color: rgba(138, 143, 146, 0.5)">
+        <form action="" class="pt-14 pb-8 px-14 w-[25rem] shadow-[2px_2px_20px_-2px_black_inset]" style="display: flex; gap: 2vw; flex-direction: column; backdrop-filter:blur(4px); background-color: rgba(138, 143, 146, 0.5)" id="register-form">
             <input type="text" placeholder="Username" required class="h-10 rounded-[5px] shadow-[2px_2px_10px_-4px_black_inset] bg-[#eff4fa] outline-none border-0 pl-4 placeholder:drop-shadow-[1px_1px_1px_gray] placeholder:text-slate-400 text-slate-600" id="username-input">
             <input type="email" placeholder="Email" required class="h-10 rounded-[5px] shadow-[2px_2px_10px_-4px_black_inset] bg-[#eff4fa] outline-none border-0 pl-4 placeholder:drop-shadow-[1px_1px_1px_gray] placeholder:text-slate-400 text-slate-600" id="email-input">
             <input type="password" placeholder="Password" required class="h-10 rounded-[5px] shadow-[2px_2px_10px_-4px_black_inset] bg-[#eff4fa] outline-none border-0 pl-4 placeholder:drop-shadow-[1px_1px_1px_gray] placeholder:text-slate-400 text-slate-600" id="password-input">
             <input type="number" max="4" min="0" placeholder="Number of Boxes" class="h-10 rounded-[5px] shadow-[2px_2px_10px_-4px_black_inset] bg-[#eff4fa] outline-none border-0 pl-4 placeholder:drop-shadow-[1px_1px_1px_gray] placeholder:text-slate-400 text-slate-600" id="boxNumber-input">
+            <div style="display: none; flex-direction: column; gap: 1.5rem;"  id="boxNumber"></div>
             <input type="text" placeholder="Work Experience" class="h-10 rounded-[5px] shadow-[2px_2px_10px_-4px_black_inset] bg-[#eff4fa] outline-none border-0 pl-4 placeholder:drop-shadow-[0px_1px_1px_gray] placeholder:text-slate-400 text-slate-600" id="workExperience-input">
             <div class="pl-[4.5rem]">
                 <input type="submit" value="Register" class="p-2 border-0 outline-0 rounded-[5px] bg-[rgb(4,109,7,0.62)] text-white shadow-[2px_2px_10px_-2px_black] mr-2 cursor-pointer">
-                <button id="cancel-button" class="inline-block p-2 border-0 outline-0 rounded-[5px] bg-[rgb(116,7,7,0.65)] text-white shadow-[2px_2px_10px_-2px_black] cursor-pointer">Cancel</button>
+                <button class="inline-block p-2 border-0 outline-0 rounded-[5px] bg-[rgb(116,7,7,0.65)] text-white shadow-[2px_2px_10px_-2px_black] cursor-pointer" id="cancel-button">Cancel</button>
             </div>
-            <script src=""></script>
+            <script src="registerPage.js"></script>
         </form>
     </body>
 </Html>
