@@ -8,6 +8,7 @@ let boxNumberInput = $.getElementById("boxNumber-input")
 let boxNumber = $.getElementById("boxNumber")
 let workExperienceInput = $.getElementById("workExperience-input")
 let cancelButton = $.getElementById("cancel-button")
+let responsibilitys = ["troject manager" , "team member" , "normal user"]
 
 //  ============================================================================== 
 
@@ -18,7 +19,8 @@ registerForm.addEventListener("submit" , even=>{
         email : emailInput.value ,
         password : passwordInput.value ,
         proficiency :[],
-        workExperience : workExperienceInput
+        workExperience : workExperienceInput,
+        responsibility : responsibilitys[Math.floor(Math.random(responsibilitys.length)*3)]
     }
 
     let proficiencysInfo = $.querySelectorAll(".proficiency-input")
