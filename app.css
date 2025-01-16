@@ -5,9 +5,40 @@
 @font-face { font-family: 'vazir-bold'; src: url('azir-bold') format('wolff2'); }
 
 
-/* ساختار کلی */
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+#main.animate {
+    animation: slideOut 1.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(30%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#main.slide-in {
+    animation: slideIn 1.5s ease-out forwards;
+}
+
+
 .flip-container {
-    perspective: 1000px; /* برای عمق دید سه‌بعدی */
+    perspective: 1000px; 
     width: 20rem;
     height: 20rem;
     position: relative;
@@ -17,26 +48,74 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    transform-style: preserve-3d; /* برای چرخش سه‌بعدی */
-    transition: transform 0.8s ease; /* انیمیشن چرخش */
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease; 
 }
 
 /* حالت Hover */
 .flip-container:hover .flipper {
-    transform: rotateY(180deg); /* چرخش 180 درجه */
+    transform: rotateY(180deg);
 }
 
-/* بخش جلو (front) */
 .front,
 .back {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* پنهان کردن طرف پشت */
+    backface-visibility: hidden;
 }
 
-/* بخش پشت (back) */
 .back {
-    transform: rotateY(180deg); /* چرخش 180 درجه */
+    transform: rotateY(180deg);
+}
+
+
+@keyframes slideInFromLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .form-animate {
+    animation: slideInFromLeft 1.5s ease-out forwards;
+  }
+
+@keyframes moveToTheLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+.move-left {
+    animation: moveToTheLeft 1.5s ease-out forwards;
+}
+
+
+#expandable {
+    position: relative; /* موقعیت دهی نسبی برای والد */
+    transition: height 0.3s ease; /* انیمیشن تغییر ارتفاع */
+}
+
+#toggle-icon {
+    position: absolute; /* موقعیت‌دهی مطلق برای فلش */
+    bottom: 10px; /* فاصله از پایین در حالت پیش‌فرض */
+    left: 50%; /* مرکز‌چین کردن افقی */
+    transform: translateX(-50%); /* تنظیم دقیق مرکز */
+    transition: transform 0.3s ease, bottom 0.3s ease; /* انیمیشن چرخش و حرکت */
+}
+
+#toggle-icon.rotated {
+    transform: rotate(180deg) translateX(-50%); /* چرخش فلش هنگام تغییر */
+    bottom: 20px; /* موقعیت جدید هنگام افزایش ارتفاع */
 }
 
