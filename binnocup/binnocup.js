@@ -71,7 +71,7 @@ registerLink.addEventListener("click" , ()=>{
             })
             .then((res)=>res.text())
             .then((data)=>{
-                if (data === ""){
+                if (data === "200"){
                     leftBox.style.marginRight = "3.5rem"
                     registerOrLogin.style.display = "none"
                     titles.innerHTML = ""
@@ -238,6 +238,8 @@ registerLink.addEventListener("click" , ()=>{
                         },600)
                     })
                     
+                }else{
+                    alert(data)
                 }
             })
         })
@@ -366,9 +368,7 @@ loginLink.addEventListener("click" , ()=>{
             })
             .then((res) => res.text())
             .then((data)=>{
-                if (data === ""){
-                    main.style.display = ""
-                    lgnForm.style.display = "none"
+                if (data === "200"){
                     leftBox.style.marginLeft = "3.5rem"
                     registerOrLogin.style.display = "none"
                     titles.innerHTML = ""
@@ -384,11 +384,20 @@ loginLink.addEventListener("click" , ()=>{
 
                     username.innerHTML = loginInfo.username
                 }
+                else if (data === "401"){
+                    alert(data)
+                }
             })
         })
 
         const loginForm = document.getElementById("login-form");
         loginForm.classList.add("form-animate");
+
+
+
+
+
+
 
         cancelButton.addEventListener("click" , function(){
             $.getElementById("login-form").classList.remove("form-animate")
@@ -396,62 +405,62 @@ loginLink.addEventListener("click" , ()=>{
             registerOrLogin.innerHTML = "Register/Login"
             registerOrLoginBtn.style.display = "none"
 
-                setTimeout(() => {
-                    leftBox.style.marginRight = "2.6rem"
+            setTimeout(() => {
+                leftBox.style.marginRight = "2.6rem"
                     
-                    btn.innerHTML = '<main id="main" class="mt-[9.5rem] mb-0 grid grid-rows-2 grid-cols-2 gap-y-10 opacity-0">\
-                        <div class="flip-container">\
-                            <div class="flipper">\
-                                <div class="front">\
-                                    <img src="../images/loginRegister.png" alt="" class="w-[20rem] h-[20rem] rounded-tl-[10rem] rounded-br-[10rem] shadow-[2px_2px_10px_black]">\
-                                </div>\
-                                <div class="back">\
-                                    <p class="w-[20rem] h-[20rem] p-10 flex items-center justify-center bg-slate-400 text-white rounded-tl-[10rem] rounded-br-[10rem] shadow-[2px_2px_10px_black]">\
-                                        <b class="drop-shadow-[1px_.5px_.5px_black]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae blanditiis nulla culpa at reprehenderit nam voluptates voluptatibus facere?</b>\
-                                    </p>\
-                                </div>\
+                btn.innerHTML = '<main id="main" class="mt-[9.5rem] mb-0 grid grid-rows-2 grid-cols-2 gap-y-10 opacity-0">\
+                    <div class="flip-container">\
+                        <div class="flipper">\
+                            <div class="front">\
+                                <img src="../images/loginRegister.png" alt="" class="w-[20rem] h-[20rem] rounded-tl-[10rem] rounded-br-[10rem] shadow-[2px_2px_10px_black]">\
+                            </div>\
+                            <div class="back">\
+                                <p class="w-[20rem] h-[20rem] p-10 flex items-center justify-center bg-slate-400 text-white rounded-tl-[10rem] rounded-br-[10rem] shadow-[2px_2px_10px_black]">\
+                                    <b class="drop-shadow-[1px_.5px_.5px_black]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae blanditiis nulla culpa at reprehenderit nam voluptates voluptatibus facere?</b>\
+                                </p>\
                             </div>\
                         </div>\
-                        <div class="flip-container">\
-                            <div class="flipper">\
-                                <div class="front">\
-                                    <img src="../images/prf.jpg" alt="" class="w-[20rem] h-[20rem] rounded-tr-[10rem] rounded-bl-[10rem] shadow-[2px_2px_10px_black]">\
-                                </div>\
-                                <div class="back">\
-                                    <p class="w-[20rem] h-[20rem] p-10 flex items-center justify-center bg-slate-400 text-white rounded-tr-[10rem] rounded-bl-[10rem] shadow-[2px_2px_10px_black]">\
-                                        <b class="drop-shadow-[1px_.5px_.5px_black]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae blanditiis nulla culpa at reprehenderit nam voluptates voluptatibus facere?</b>\
-                                    </p>\
-                                </div>\
+                    </div>\
+                    <div class="flip-container">\
+                        <div class="flipper">\
+                            <div class="front">\
+                                <img src="../images/prf.jpg" alt="" class="w-[20rem] h-[20rem] rounded-tr-[10rem] rounded-bl-[10rem] shadow-[2px_2px_10px_black]">\
+                            </div>\
+                            <div class="back">\
+                                <p class="w-[20rem] h-[20rem] p-10 flex items-center justify-center bg-slate-400 text-white rounded-tr-[10rem] rounded-bl-[10rem] shadow-[2px_2px_10px_black]">\
+                                    <b class="drop-shadow-[1px_.5px_.5px_black]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae blanditiis nulla culpa at reprehenderit nam voluptates voluptatibus facere?</b>\
+                                </p>\
                             </div>\
                         </div>\
-                        <div class="flip-container">\
-                            <div class="flipper">\
-                                <div class="front">\
-                                    <img src="../images/OIP (1).jpg" alt="" class="w-[20rem] h-[20rem] rounded-tr-[10rem] rounded-bl-[10rem] shadow-[2px_2px_10px_black]">\
-                                </div>\
-                                <div class="back">\
-                                    <p class="w-[20rem] h-[20rem] p-10 flex items-center justify-center bg-slate-400 text-white rounded-tr-[10rem] rounded-bl-[10rem] shadow-[2px_2px_10px_black]">\
-                                        <b class="drop-shadow-[1px_.5px_.5px_black]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae blanditiis nulla culpa at reprehenderit nam voluptates voluptatibus facere?</b>\
-                                    </p>\
-                                </div>\
+                    </div>\
+                    <div class="flip-container">\
+                        <div class="flipper">\
+                            <div class="front">\
+                                <img src="../images/OIP (1).jpg" alt="" class="w-[20rem] h-[20rem] rounded-tr-[10rem] rounded-bl-[10rem] shadow-[2px_2px_10px_black]">\
+                            </div>\
+                            <div class="back">\
+                                <p class="w-[20rem] h-[20rem] p-10 flex items-center justify-center bg-slate-400 text-white rounded-tr-[10rem] rounded-bl-[10rem] shadow-[2px_2px_10px_black]">\
+                                    <b class="drop-shadow-[1px_.5px_.5px_black]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae blanditiis nulla culpa at reprehenderit nam voluptates voluptatibus facere?</b>\
+                                </p>\
                             </div>\
                         </div>\
-                        <div class="flip-container">\
-                            <div class="flipper">\
-                                <div class="front">\
-                                    <img src="../images/loginRegister.png" alt="" class="w-[20rem] h-[20rem] rounded-tl-[10rem] rounded-br-[10rem] shadow-[2px_2px_10px_black]">\
-                                </div>\
-                                <div class="back">\
-                                    <p class="w-[20rem] h-[20rem] p-10 flex items-center justify-center bg-slate-400 text-white rounded-tl-[10rem] rounded-br-[10rem] shadow-[2px_2px_10px_black]">\
-                                        <b class="drop-shadow-[1px_.5px_.5px_black]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae blanditiis nulla culpa at reprehenderit nam voluptates voluptatibus facere?</b>\
-                                    </p>\
-                                </div>\
+                    </div>\
+                    <div class="flip-container">\
+                        <div class="flipper">\
+                            <div class="front">\
+                                <img src="../images/loginRegister.png" alt="" class="w-[20rem] h-[20rem] rounded-tl-[10rem] rounded-br-[10rem] shadow-[2px_2px_10px_black]">\
+                            </div>\
+                            <div class="back">\
+                                <p class="w-[20rem] h-[20rem] p-10 flex items-center justify-center bg-slate-400 text-white rounded-tl-[10rem] rounded-br-[10rem] shadow-[2px_2px_10px_black]">\
+                                    <b class="drop-shadow-[1px_.5px_.5px_black]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae blanditiis nulla culpa at reprehenderit nam voluptates voluptatibus facere?</b>\
+                                </p>\
                             </div>\
                         </div>\
-                    </main>'
-                    $.getElementById("main").classList.add("slide-in")
-                    $.getElementById("main").classList.remove("opacity-0");
-            }, 600);
+                    </div>\
+                </main>'
+                $.getElementById("main").classList.add("slide-in")
+                $.getElementById("main").classList.remove("opacity-0");
+                }, 600);
         })
     },600)
 })
