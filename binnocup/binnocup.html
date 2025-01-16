@@ -1,5 +1,4 @@
-
-<html dir="ltr" lang="en">
+<Html dir="ltr" lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,99 +8,90 @@
     </head>
     <body class="container mx-auto bg-slate-300">
         <div class="z-10">
-            <header id="header" class="w-[35rem] h-[4rem] mx-auto mt-[2rem] bg-blue-100 fixed px-5 py-3 shadow-[2px_2px_10px_2px_black] rounded-[5px] top-[1rem] left-0 right-[30rem] z-10">
-                <ul class="flex justify-center gap-[2rem] ml-[-.5rem]">
+            <header id="header" class="h-[4rem] ml-[7rem] mt-[3rem] bg-blue-100 fixed px-5 py-3 shadow-[2px_2px_10px_2px_black] rounded-[5px] z-10 inline-block">
+                <ul id="titleBtn" class="flex justify-center gap-[2rem] ml-[-.5rem]">
                     <li class="flex gap-1 p-2 pl-0 border-0 hover:border-b-2 hover:border-b-slate-700 transition-all duration-100 text-slate-600 drop-shadow-[1px_.5px_.5px_black]">
                         <img src="../images/icons8-home-100.png" class="w-6" alt="">
-                        <b class="cursor-pointer">Home</b>
+                        <b id="homeLink" class="cursor-pointer">Home</b>
                     </li>
                     <li class="flex gap-1 p-2 pl-0 text-slate-600 drop-shadow-[1px_.5px_.5px_black]">
                         <img src="../images/icons8-human-100.png" class="w-6" alt="">
                         <b id="reglog" class="border-0 hover:border-b-2 hover:border-b-slate-700 transition-all duration-100 cursor-pointer">Register/Login</b>
                         
                         <ul id="RL-btn" class="absolute w-[7rem] h-[5rem] rounded-[10px] grid items-center justify-center bg-slate-500 shadow-[2px_2px_10px_-2px_black]" style="display: none; justify-items: center;">
-                            <li class="drop-shadow-[1px_.5px_.5px_black] border-b-2 border-b-slate-200 text-blue-100 pb-[10px] cursor-pointer"><b>Register</b></li>
-                            <li class="drop-shadow-[1px_.5px_.5px_black] text-blue-100 cursor-pointer"><b>Login</b></li>
+                            <li id="registerLink" class="drop-shadow-[1px_.5px_.5px_black] border-b-2 border-b-slate-200 text-blue-100 hover:text-blue-300 pb-[10px] cursor-pointer"><b>Register</b></li>
+                            <li id="loginLink" class="drop-shadow-[1px_.5px_.5px_black] text-blue-100 hover:text-blue-300 cursor-pointer"><b>Login</b></li>
                         </ul>
-                    </li>
-                    <li class="flex gap-1 p-2 border-0 hover:border-b-2 hover:border-b-slate-700 transition-all duration-100 text-slate-600 drop-shadow-[1px_.5px_.5px_black]">
-                        <img src="../images/icons8-task-100.png" class="w-6" alt="">
-                        <b class="cursor-pointer">Tasks</b>
-                    </li>
-                    <li class="flex gap-1 p-2 border-0 hover:border-b-2 hover:border-b-slate-700 transition-all duration-100 text-slate-600 drop-shadow-[1px_.5px_.5px_black]">
-                        <img src="../images/icons8-edit-account-100.png" class="w-6" alt="">
-                        <b class="cursor-pointer">Profile</b>
                     </li>
                 </ul>
             </header> 
             <div id="profile" class="fixed text-center"> 
-                <button class="w-[7rem] h-[7rem] mt-[1.5rem] rounded-[100%]">
-                    <img src="../images/icons8-test-account-100.png" alt="" class="w-[10rem]" style="filter: drop-shadow(0px 0px 10px rgb(157, 157, 155));">
-                </button>
-                <p class="mt-[-1rem] text-xl text-slate-700 drop-shadow-[1px_.5px_.5px_black]">Username</p>
+                <img src="../images/icons8-test-account-100.png" alt="" class="w-[8rem] mt-5 -ml-2" style="filter: drop-shadow(0px 0px 10px rgb(157, 157, 155));">
+                <p id="username" class="mt-[-1rem] -ml-4 text-xl text-slate-700 drop-shadow-[1px_.5px_.5px_black]">Username</p>
             </div> 
         </div>
         <br>
         <br>
         <br>
-        <div class="float-left w-[16rem] h-[88%] mt-[10rem] mr-[3.5rem] shadow-[2px_2px_10px_black_inset] border-4 border-slate-400 border-solid rounded-tr-[20px] rounded-br-[20px] rounded-tl-[20px] rounded-bl-[20px]" style="background-image: url(../images/inscriptublueprintprinting.jpg); background-position: center; background-attachment: fixed; background-repeat: no-repeat; background-size: cover;"></div>
-        <div class="float-right w-[16rem] h-[88%] mt-[10rem] shadow-[2px_2px_10px_black_inset] border-4 border-slate-400 border-solid rounded-tl-[20px] rounded-bl-[20px] rounded-tr-[20px] rounded-br-[20px]" style="background-image: url(../images/inscriptublueprintprinting.jpg); background-position: center; background-attachment: fixed; background-repeat: no-repeat; background-size: cover;"></div>
-        <main class="w-[50%] float-none mt-[10rem] grid grid-rows-2 grid-cols-2 gap-x-10 gap-y-5">
-            <div class="flip-container">
-                <div class="flipper">
-                    <div class="front">
-                        <img src="../images/loginRegister.png" alt="" class="w-[20rem] h-[20rem] rounded-tl-[10rem] rounded-br-[10rem] shadow-[2px_2px_10px_black]">
-                    </div>
-                    <div class="back">
-                        <p class="w-[20rem] h-[20rem] p-10 flex items-center justify-center bg-slate-400 text-white rounded-tl-[10rem] rounded-br-[10rem] shadow-[2px_2px_10px_black]">
-                            <b class="drop-shadow-[1px_.5px_.5px_black]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae blanditiis nulla culpa at reprehenderit nam voluptates voluptatibus facere?</b>
-                        </p>
+        <div id="left-box" class="float-left w-[16rem] h-[88%] mt-[10rem] mb-[5rem] mr-[2.6rem] shadow-[2px_2px_10px_black_inset] border-4 border-slate-400 border-solid rounded-tr-[20px] rounded-br-[20px] rounded-tl-[20px] rounded-bl-[20px]" style="background-image: url(../images/inscriptublueprintprinting.jpg); background-position: center; background-attachment: fixed; background-repeat: no-repeat; background-size: cover;"></div>
+        <div id="right-box" class="float-right w-[16rem] h-[88%] mt-[10rem] mb-[5rem] shadow-[2px_2px_10px_black_inset] border-4 border-slate-400 border-solid rounded-tl-[20px] rounded-bl-[20px] rounded-tr-[20px] rounded-br-[20px]" style="background-image: url(../images/inscriptublueprintprinting.jpg); background-position: center; background-attachment: fixed; background-repeat: no-repeat; background-size: cover;"></div>
+        <div id="btn" class="float-none">
+
+            <main id="main" class="mt-[9.5rem] mb-0 grid grid-rows-2 grid-cols-2 gap-y-10">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="front">
+                            <img src="../images/loginRegister.png" alt="" class="w-[20rem] h-[20rem] rounded-tl-[10rem] rounded-br-[10rem] shadow-[2px_2px_10px_black]">
+                        </div>
+                        <div class="back">
+                            <p class="w-[20rem] h-[20rem] p-10 flex items-center justify-center bg-slate-400 text-white rounded-tl-[10rem] rounded-br-[10rem] shadow-[2px_2px_10px_black]">
+                                <b class="drop-shadow-[1px_.5px_.5px_black]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae blanditiis nulla culpa at reprehenderit nam voluptates voluptatibus facere?</b>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="flip-container">
-                <div class="flipper">
-                    <div class="front">
-                        <img src="../images/prf.jpg" alt="" class="w-[20rem] h-[20rem] rounded-tr-[10rem] rounded-bl-[10rem] shadow-[2px_2px_10px_black]">
-                    </div>
-                    <div class="back">
-                        <p class="w-[20rem] h-[20rem] p-10 flex items-center justify-center bg-slate-400 text-white rounded-tr-[10rem] rounded-bl-[10rem] shadow-[2px_2px_10px_black]">
-                            <b class="drop-shadow-[1px_.5px_.5px_black]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae blanditiis nulla culpa at reprehenderit nam voluptates voluptatibus facere?</b>
-                        </p>
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="front">
+                            <img src="../images/prf.jpg" alt="" class="w-[20rem] h-[20rem] rounded-tr-[10rem] rounded-bl-[10rem] shadow-[2px_2px_10px_black]">
+                        </div>
+                        <div class="back">
+                            <p class="w-[20rem] h-[20rem] p-10 flex items-center justify-center bg-slate-400 text-white rounded-tr-[10rem] rounded-bl-[10rem] shadow-[2px_2px_10px_black]">
+                                <b class="drop-shadow-[1px_.5px_.5px_black]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae blanditiis nulla culpa at reprehenderit nam voluptates voluptatibus facere?</b>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-
-            <div class="flip-container">
-                <div class="flipper">
-                    <div class="front">
-                        <img src="../images/OIP (1).jpg" alt="" class="w-[20rem] h-[20rem] rounded-tr-[10rem] rounded-bl-[10rem] shadow-[2px_2px_10px_black]">
-                    </div>
-                    <div class="back">
-                        <p class="w-[20rem] h-[20rem] p-10 flex items-center justify-center bg-slate-400 text-white rounded-tr-[10rem] rounded-bl-[10rem] shadow-[2px_2px_10px_black]">
-                            <b class="drop-shadow-[1px_.5px_.5px_black]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae blanditiis nulla culpa at reprehenderit nam voluptates voluptatibus facere?</b>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flip-container">
-                <div class="flipper">
-                    <div class="front">
-                        <img src="../images/loginRegister.png" alt="" class="w-[20rem] h-[20rem] rounded-tl-[10rem] rounded-br-[10rem] shadow-[2px_2px_10px_black]">
-                    </div>
-                    <div class="back">
-                        <p class="w-[20rem] h-[20rem] p-10 flex items-center justify-center bg-slate-400 text-white rounded-tl-[10rem] rounded-br-[10rem] shadow-[2px_2px_10px_black]">
-                            <b class="drop-shadow-[1px_.5px_.5px_black]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae blanditiis nulla culpa at reprehenderit nam voluptates voluptatibus facere?</b>
-                        </p>
+                
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="front">
+                            <img src="../images/OIP (1).jpg" alt="" class="w-[20rem] h-[20rem] rounded-tr-[10rem] rounded-bl-[10rem] shadow-[2px_2px_10px_black]">
+                        </div>
+                        <div class="back">
+                            <p class="w-[20rem] h-[20rem] p-10 flex items-center justify-center bg-slate-400 text-white rounded-tr-[10rem] rounded-bl-[10rem] shadow-[2px_2px_10px_black]">
+                                <b class="drop-shadow-[1px_.5px_.5px_black]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae blanditiis nulla culpa at reprehenderit nam voluptates voluptatibus facere?</b>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </main>
 
-        <footer class="w-[80%] h-[15rem] mx-auto pt-[2rem] bg-slate-400 mt-[3rem] flex gap-8 justify-center items-center border-0 border-t-4 border-slate-400 rounded-tr-[20px] rounded-tl-[20px] shadow-[2px_2px_10px_black_inset]">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="front">
+                            <img src="../images/loginRegister.png" alt="" class="w-[20rem] h-[20rem] rounded-tl-[10rem] rounded-br-[10rem] shadow-[2px_2px_10px_black]">
+                        </div>
+                        <div class="back">
+                            <p class="w-[20rem] h-[20rem] p-10 flex items-center justify-center bg-slate-400 text-white rounded-tl-[10rem] rounded-br-[10rem] shadow-[2px_2px_10px_black]">
+                                <b class="drop-shadow-[1px_.5px_.5px_black]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae blanditiis nulla culpa at reprehenderit nam voluptates voluptatibus facere?</b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <footer class="w-[80%] h-[15rem] mx-auto pt-[2rem] bg-slate-400 flex gap-8 justify-center items-center border-0 border-t-4 border-slate-400 rounded-tr-[20px] rounded-tl-[20px] shadow-[2px_2px_10px_black_inset]">
             <ul class="float-left" style="list-style: inside;">
                 <li class="mb-3 text-xl cursor-pointer text-cyan-800 drop-shadow-[1px_.5px_.5px_black]" style="list-style: none;">Quick Access</li>
                 <li class="mb-2 cursor-pointer text-white drop-shadow-[1px_.5px_.5px_black]">Contact Us</li>
@@ -123,5 +113,5 @@
 
         <script src="binnocup.js"></script>
     </body>
-</html>
+</Html>
 
