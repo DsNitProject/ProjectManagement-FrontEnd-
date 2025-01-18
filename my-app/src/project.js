@@ -3,6 +3,24 @@ import MyImage1 from './images/icons8-home-100 (1).png';
 import MyImage2 from './images/icons8-test-account-100.png';
 import MyImage3 from './images/icons8-human-100.png'
 const ProjectsPage = () => {
+  const [activeProject, setActiveProject] = useState(null);
+
+  const toggleProjectContent = (projectId) => {
+    setActiveProject((prevProject) =>
+      prevProject === projectId ? null : projectId
+    );
+  };
+
+  const projects = [
+    {
+      id: 1,
+      name: 'Project 1',
+      startDate: '2024-04-02',
+      endDate: '2025-06-10',
+      tasks: ['Analyze requirements'],
+    },
+  ];
+
   return (
     <div className="bg-slate-300 min-h-screen flex flex-col items-center">
       <header className="fixed top-0 left-0 right-0 bg-slate-800 text-white p-4 flex items-center justify-between shadow-md z-10">
@@ -34,6 +52,39 @@ const ProjectsPage = () => {
           </span>
         </div>
       </header>
+      <main className="bg-gray-100 w-2/4 max-w-4xl h-[50vh] rounded-lg shadow-lg p-6 mt-56 overflow-y-auto">
+        <div className="space-y-6">
+          {projects.map((project) => (
+            <div key={project.id} className="bg-gray-200 shadow-lg rounded-lg p-10 project">
+              <div className="flex justify-between items-center">
+                <h2 className="text-xl font-bold text-gray-700">{project.name}</h2>
+                <button
+                  className="toggle-btn text-gray-500 text-xl"
+                  onClick={() => toggleProjectContent(project.id)}
+                >
+                  {activeProject === project.id ? '▲' : '▼'}
+                </button>
+              </div>
+              {activeProject === project.id && (
+                <div className="hidden-content mt-4">
+                  <p className="text-gray-600">Start Date: {project.startDate}</p>
+                  <p className="text-gray-600">End Date: {project.endDate}</p>
+                  <div className="bg-gray-100 border border-gray-300 rounded-md h-24 overflow-y-auto p-2 mt-2">
+                    <ul className="list-disc pl-5 text-gray-600">
+                      {project.tasks.map((task, index) => (
+                        <li key={index}>{task}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <a href="#" className="mt-4 inline-block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-600">
+                    Go to Project
+                  </a>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </main>
       <footer className="w-full bg-slate-800 text-white p-6 mt-[6.98rem]">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <ul className="space-y-2">
