@@ -31,6 +31,49 @@ const RegisterPage = () => {
           </span>
         </div>
       </header>
+      <main className="w-full max-w-md bg-white rounded-lg shadow-lg p-6 mt-72">
+        <h2 className="text-2xl font-bold text-gray-700 text-center drop-shadow-lg mb-6">Login</h2>
+        <form action="#" method="POST">
+          <div className="mb-4">
+            <label htmlFor="name" className="block text-sm font-medium drop-shadow-lg text-gray-600">
+              Username
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-800"
+            />
+          </div>
+          <div className="mb-6">
+            <label htmlFor="password" className="block text-sm font-medium text-gray-600">
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-800"
+            />
+          </div>
+          <div className="flex justify-center space-x-4">
+            <button
+              type="submit"
+              className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-800 transition"
+            >
+              Login
+            </button>
+            <button
+              type="button"
+              className="bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </main>
       <footer className="w-full bg-slate-800 text-white p-6 mt-[12.8rem]">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <ul className="space-y-2">
