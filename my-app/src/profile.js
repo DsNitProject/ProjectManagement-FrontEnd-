@@ -8,6 +8,7 @@ import MyImage2 from './images/icons8-project-100.png'
 const ProfilePage = () => {
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col items-center">
+      {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-slate-800 text-white p-4 flex items-center justify-between shadow-md z-10">
         <div className="container mx-auto flex justify-start items-center">
           <span className="flex items-center text-lg font-bold mr-6">
@@ -20,6 +21,7 @@ const ProfilePage = () => {
           </span>
           <nav>
             <ul className="flex space-x-6">
+              {/* Register/Login link with icon */}
               <li className="flex items-center text-lg font-bold mr-6">
                 <img src={MyImage2} alt="Register Icon" className="w-8" />
                 <a href="/Projects" className="mt-3 ml-1">
@@ -30,6 +32,25 @@ const ProfilePage = () => {
           </nav>
         </div>
       </header>
+      <footer className="w-full bg-slate-800 text-white p-6 mt-[3.95rem]">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <ul className="space-y-2">
+            <li className="-ml-3">Contact Us</li>
+            <li style={{ listStyle: 'disc' }}>About Us</li>
+            <li style={{ listStyle: 'disc' }}>Site Management</li>
+          </ul>
+          <ul className="space-y-2">
+            <li className="-ml-3">Information Base</li>
+            <li style={{ listStyle: 'disc' }}>Ministry of Science, Research and Technology</li>
+            <li style={{ listStyle: 'disc' }}>Vice President for Science and Technology</li>
+          </ul>
+          <ul className="space-y-2">
+            <li className="-ml-3">Secretariat Address</li>
+            <li style={{ listStyle: 'disc' }}>Address: Babol Noshirvani University of Technology</li>
+            <li style={{ listStyle: 'disc' }}>Phone: 09370117891 / 09035912910</li>
+          </ul>
+        </div>
+      </footer>
     </div>
   );
 };
