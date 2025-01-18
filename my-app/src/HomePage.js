@@ -14,6 +14,10 @@ function HomePage() {
 
   return (
     <div className="bg-slate-200">
+      {successMessage && (
+        <div className="bg-green-500 text-white p-4 text-center">{successMessage}</div>
+      )}
+      {
         <div className="bg-slate-200">
         <header className="fixed top-0 left-0 right-0 bg-slate-800 text-white p-4 flex items-center justify-between shadow-md z-10">
           <div className="flex items-center space-x-4">
@@ -121,6 +125,7 @@ function HomePage() {
           </div>
         </footer>
       </div>
+      }
     </div>
   );
 }
