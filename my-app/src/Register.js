@@ -27,6 +27,25 @@ function RegisterPage() {
           <span className="drop-shadow-[1px_.5px_.5px_gray] text-lg" id="username">Username</span>
         </div>
       </header>
+      <footer className="w-full bg-slate-800 text-white p-6 mt-[3.95rem]">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <ul className="space-y-2">
+            <li className="-ml-3">Contact Us</li>
+            <li style={{ listStyle: 'disc' }}>About Us</li>
+            <li style={{ listStyle: 'disc' }}>Site Management</li>
+          </ul>
+          <ul className="space-y-2">
+            <li className="-ml-3">Information Base</li>
+            <li style={{ listStyle: 'disc' }}>Ministry of Science, Research and Technology</li>
+            <li style={{ listStyle: 'disc' }}>Vice President for Science and Technology</li>
+          </ul>
+          <ul className="space-y-2">
+            <li className="-ml-3">Secretariat Address</li>
+            <li style={{ listStyle: 'disc' }}>Address: Babol Noshirvani University of Technology</li>
+            <li style={{ listStyle: 'disc' }}>Phone: 09370117891 / 09035912910</li>
+          </ul>
+        </div>
+      </footer>
     </div>
   );
 }
