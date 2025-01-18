@@ -40,6 +40,56 @@ function HomePage() {
             </span>
           </div>
         </header>
+  
+        <div className="pt-36 min-h-screen flex flex-col justify-start">
+          <main className="mx-auto w-full max-w-5xl px-4">
+            <section className="text-center">
+              <h2 className="text-4xl font-bold text-slate-800 drop-shadow-[1px_.5px_.5px_gray]">
+                What is a Project Manager?
+              </h2>
+              <p className="mt-16 text-lg text-slate-600 drop-shadow-[1px_.5px_.5px_gray]">
+                A Project Manager (PM) is a professional responsible for leading a
+                project from its inception to completion. Their role involves
+                planning, organizing, and managing resources to ensure that a
+                project is completed on time and within budget.
+              </p>
+  
+              <div className="grid grid-cols-1 sm:grid-cols-2 sm:mt-10 lg:grid-cols-3 gap-6 mt-28">
+                <div className="text-center">
+                  <img
+                    src={MyImage5}
+                    alt="Planning"
+                    className="w-48 h-48 object-cover rounded-lg shadow-2xl mx-auto"
+                  />
+                  <p className="mt-5 text-slate-700 drop-shadow-[1px_.5px_.5px_gray]">
+                    Planning
+                  </p>
+                </div>
+                <div className="text-center">
+                  <img
+                    src={MyImage6}
+                    alt="Team Collaboration"
+                    className="w-48 h-48 object-cover rounded-lg shadow-2xl mx-auto"
+                  />
+                  <p className="mt-5 text-slate-700 drop-shadow-[1px_.5px_.5px_gray]">
+                    Team Collaboration
+                  </p>
+                </div>
+                <div className="text-center">
+                  <img
+                    src={MyImage7}
+                    alt="Budget Management"
+                    className="w-48 h-48 object-cover rounded-lg shadow-2xl mx-auto"
+                  />
+                  <p className="mt-5 text-slate-700 drop-shadow-[1px_.5px_.5px_gray]">
+                    Budget Management
+                  </p>
+                </div>
+              </div>
+            </section>
+          </main>
+        </div>
+  
         <footer className="bg-slate-800 text-white p-6 mt-[-8.5rem]">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <ul className="space-y-2">
