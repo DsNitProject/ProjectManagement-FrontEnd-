@@ -9,6 +9,9 @@ import MyImage7 from './images/R.jpg';
 import { useLocation } from "react-router-dom";
 
 function HomePage() {
+  const location = useLocation();
+  const successMessage = location.state?.successMessage;
+
   return (
     <div className="bg-slate-200">
         <div className="bg-slate-200">
