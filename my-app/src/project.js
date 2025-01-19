@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import MyImage1 from './images/icons8-home-100 (1).png';
-import MyImage2 from './images/icons8-test-account-100.png';
-import MyImage3 from './images/icons8-human-100.png'
+import MyImage2 from './images/icons8-administrator-male-100.png';
+import MyImage3 from './images/icons8-human-100.png';
+
 const ProjectsPage = () => {
+  const [projects, setProjects] = useState([]);
   const [activeProject, setActiveProject] = useState(null);
 
   const toggleProjectContent = (projectId) => {
@@ -11,15 +14,44 @@ const ProjectsPage = () => {
     );
   };
 
-  const projects = [
-    {
-      id: 1,
-      name: 'Project 1',
-      startDate: '2024-04-02',
-      endDate: '2025-06-10',
-      tasks: ['Analyze requirements'],
-    },
-  ];
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const response = await axios.get("https://example.com/api/projects", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setProjects(response.data);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  // ارسال ID پروژه به بک‌اند هنگام کلیک روی دکمه
+  const handleGoToProject = async (projectId) => {
+    try {
+      const token = localStorage.getItem("token");
+      const response = await axios.post(
+        "https://example.com/api/project-tasks",
+        { projectId }, // ارسال ID پروژه
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log("Response from backend:", response.data);
+      // هدایت به صفحه تسک‌ها
+      window.location.href = `/task/${projectId}`;
+    } catch (error) {
+      console.error("Error sending project ID:", error);
+    }
+  };
 
   return (
     <div className="bg-slate-300 min-h-screen flex flex-col items-center">
@@ -27,18 +59,13 @@ const ProjectsPage = () => {
         <div className="flex items-center space-x-4">
           <nav>
             <ul className="flex space-x-6">
-              {/* Register/Login link with icon */}
               <li className="flex items-center text-lg font-bold mr-6">
                 <img src={MyImage1} alt="Login Icon" className="w-7" />
-                <a href='/home' className="mt-3 ml-1">
-                  Login
-                </a>
+                <a href="/home" className="mt-3 ml-1">Home</a>
               </li>
               <li className="flex items-center text-lg font-bold mr-6">
                 <img src={MyImage2} alt="Register Icon" className="w-8" />
-                <a href="/profile" className="mt-3 ml-1">
-                  Profile
-                </a>
+                <a href="/profile" className="mt-3 ml-1">Profile</a>
               </li>
             </ul>
           </nav>
@@ -54,35 +81,42 @@ const ProjectsPage = () => {
       </header>
       <main className="bg-gray-100 w-2/4 max-w-4xl h-[50vh] rounded-lg shadow-lg p-6 mt-56 overflow-y-auto">
         <div className="space-y-6">
-          {projects.map((project) => (
-            <div key={project.id} className="bg-gray-200 shadow-lg rounded-lg p-10 project">
-              <div className="flex justify-between items-center">
-                <h2 className="text-xl font-bold text-gray-700">{project.name}</h2>
-                <button
-                  className="toggle-btn text-gray-500 text-xl"
-                  onClick={() => toggleProjectContent(project.id)}
-                >
-                  {activeProject === project.id ? '▲' : '▼'}
-                </button>
-              </div>
-              {activeProject === project.id && (
-                <div className="hidden-content mt-4">
-                  <p className="text-gray-600">Start Date: {project.startDate}</p>
-                  <p className="text-gray-600">End Date: {project.endDate}</p>
-                  <div className="bg-gray-100 border border-gray-300 rounded-md h-24 overflow-y-auto p-2 mt-2">
-                    <ul className="list-disc pl-5 text-gray-600">
-                      {project.tasks.map((task, index) => (
-                        <li key={index}>{task}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <a href="#" className="mt-4 inline-block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-600">
-                    Go to Project
-                  </a>
+          {projects.length === 0 ? (
+            <p className="text-gray-600">No projects found.</p>
+          ) : (
+            projects.map((project) => (
+              <div key={project.id} className="bg-gray-200 shadow-lg rounded-lg p-10 project">
+                <div className="flex justify-between items-center">
+                  <h2 className="text-xl font-bold text-gray-700">{project.name}</h2>
+                  <button
+                    className="toggle-btn text-gray-500 text-xl"
+                    onClick={() => toggleProjectContent(project.id)}
+                  >
+                    {activeProject === project.id ? '▲' : '▼'}
+                  </button>
                 </div>
-              )}
-            </div>
-          ))}
+                {activeProject === project.id && (
+                  <div className="hidden-content mt-4">
+                    <p className="text-gray-600">Start Date: {project.startDate}</p>
+                    <p className="text-gray-600">End Date: {project.endDate}</p>
+                    <div className="bg-gray-100 border border-gray-300 rounded-md h-24 overflow-y-auto p-2 mt-2">
+                      <ul className="list-disc pl-5 text-gray-600">
+                        {project.tasks.map((task, index) => (
+                          <li key={index}>{task}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <button
+                      className="mt-4 inline-block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-600"
+                      onClick={() => handleGoToProject(project.id)} // ارسال ID پروژه
+                    >
+                      Go to Project
+                    </button>
+                  </div>
+                )}
+              </div>
+            ))
+          )}
         </div>
       </main>
       <footer className="w-full bg-slate-800 text-white p-6 mt-[6.98rem]">

@@ -4,6 +4,7 @@ import HomePage from './HomePage';
 import RegisterPage from './Register';
 import LoginPage from './LoginPage';
 import ProfilePage from './profile'
+import ProfileEdit from './ProfileEdit'
 import ProjectsPage from './project';
 import Task from './task'
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/register" element={<RegisterPage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/profile' element={<ProfilePage/>}/>
+        <Route path='/prfileEdit' element={<ProfileEdit/>}/>
         <Route path='/project' element={<ProjectsPage/>}/>
         <Route path='/task' element={<Task/>}/>
       </Routes>
